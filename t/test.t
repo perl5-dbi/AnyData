@@ -7,13 +7,13 @@ use warnings;
 my @formats = qw(CSV Pipe Tab Fixed Paragraph ARRAY);
 
 use Test::More;
-plan tests => (1+$#formats) * 4;
+plan tests => (1+$#formats) * 6;
 
 use AnyData;
 
 
 for my $format( @formats ) {
-   printf  "  %10s ... %s\n", $format, test_ad($format);
+   test_ad($format);
 }
 
 sub test_ad {
@@ -25,6 +25,8 @@ sub test_ad {
     $table->{Sue} = {country=>'fr',sex=>'f'};          # insert rows
     $table->{Tom} = {country=>'fr',sex=>'f'};
     $table->{Bev} = {country=>'en',sex=>'f'};
+    $table->{Nel} = {country=>'en',sex=>'f'};
+    $table->{Pam} = {country=>'au',sex=>'f'};
     $table->{{ name=>'Tom'}} = {sex=>'m'};             # update a row
     delete $table->{Bev};                              # delete a row
     $flags = {pattern=>'A5 A8 A3'};
@@ -35,7 +37,9 @@ sub test_ad {
     }
     ok('SueTom' eq $tstr, "Failed multiple select");
     ok('namecountrysex' eq join('',adNames($table)), "Failed names");
-    ok(2 == adRows($table), "Failed rows");
+    ok(4 == adRows($table), "Failed rows");
+    ok(4 == adColumn($table, 'country'), "total number of rows");
+    ok(3 == adColumn($table, 'country', 1), "distinct countries");
 }
 
 

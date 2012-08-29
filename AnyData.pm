@@ -498,13 +498,14 @@ sub adRows {
     my $thash = shift;
     my %keys  = @_;
     my $obj   = tied(%$thash);
-    return $obj->adRows(\%keys)
+    return $obj->adRows(\%keys);
 }
 sub adColumn {
     my $thash  = shift;
     my $column = shift;
+    my $flags = shift;
     my $obj    = tied(%$thash);
-    return $obj->adColumn($column)
+    return $obj->adColumn($column, $flags);
 }
 sub adArray {
     my($format,$data)=@_;

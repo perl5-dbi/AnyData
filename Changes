@@ -9,7 +9,7 @@ version 0.11, released  Aug 2012
  * Fails to retrieve XML data over HTTP (debian#421884) Bart Martens <bartm@knars.be>
  * Fix syntax error in POD documentation (debian) Ansgar Burchardt <ansgar@43-1.org>
  * Fix spelling errors (debian) Ansgar Burchardt <ansgar@43-1.org>
-
+ * adColumn $distinct_flag not handled (RT#6248 & RT#6251) John D. Lima
 
 
 version 0.10, released 19 April 2004
