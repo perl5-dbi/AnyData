@@ -654,17 +654,17 @@ sub get_structure_from_map {
        $map = $newmap;
     }
 ##
-=pod
-paste into parent record_tag__
-    my $rt_atts = $record_tag->atts;
-    if (!$rt_atts->{record_tag__}) {
-       my $new_rt = $record_tag->copy;
-       $new_rt->set_att('record_tag__','1');
-       $new_rt->set_att('xstruct__','1');
-       $new_rt->paste('first_child',$record_tag->parent);
-       $record_tag = $new_rt;
-    }
-=cut
+#=pod
+#paste into parent record_tag__
+#    my $rt_atts = $record_tag->atts;
+#    if (!$rt_atts->{record_tag__}) {
+#       my $new_rt = $record_tag->copy;
+#       $new_rt->set_att('record_tag__','1');
+#       $new_rt->set_att('xstruct__','1');
+#       $new_rt->paste('first_child',$record_tag->parent);
+#       $record_tag = $new_rt;
+#    }
+#=cut
     my $col_structure = {
         amap => $amap,
         map  => $map,
@@ -981,7 +981,7 @@ Importing options allow you to import/access/modify XML of almost any length or 
 
 Exporting and converting options allow you to take data from almost any source (a perl array, any DBI database, etc.) and output it as an XML file.  You can control the formating of the resulting XML either by supplying a DTD listing things like nesting of tags and which columns should be output as attributes and/or you can use XML::Twig pretty_print settings to generate half a dozen different levels of compactness or whitespace in how the XML looks.
 
-The documentaion below outlines the special flags that can be used
+The documentation below outlines the special flags that can be used
 in either of the interfaces to fine-tune how the XML is treated.
 
 The flags listed below define the relationship between tags and 

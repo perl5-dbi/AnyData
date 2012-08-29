@@ -7,7 +7,10 @@ version 0.11, released  Aug 2012
  * new maintainer Sven Dowideit
  * use Test::More
  * Fails to retrieve XML data over HTTP (debian#421884) Bart Martens <bartm@knars.be>
- *
+ * Fix syntax error in POD documentation (debian) Ansgar Burchardt <ansgar@43-1.org>
+ * Fix spelling errors (debian) Ansgar Burchardt <ansgar@43-1.org>
+
+
 
 version 0.10, released 19 April 2004
 
