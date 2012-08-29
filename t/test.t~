@@ -1,8 +1,14 @@
-#!/usr/local/bin/perl -w
+#!/usr/local/bin/perl -wT
 use strict;
-use AnyData;
-print "\nUsing AnyData $AnyData::VERSION\n\n";
+use warnings;
+
 my @formats = qw(CSV Pipe Tab Fixed Paragraph ARRAY);
+
+use Test::More;
+plan tests => (1+$#formats) * 4;
+
+use AnyData;
+
 
 for my $format( @formats ) {
    printf  "  %10s ... %s\n", $format, test_ad($format);
@@ -20,16 +26,14 @@ sub test_ad {
     $table->{{ name=>'Tom'}} = {sex=>'m'};             # update a row
     delete $table->{Bev};                              # delete a row
     $flags = {pattern=>'A5 A8 A3'};
-    return "Failed single select"
-        unless 'f' eq $table->{Sue}->{sex};            # select a single value
+    ok('f' eq $table->{Sue}->{sex}, "Failed single select");
     my $tstr;
     while ( my $person = each %$table ) {              # select mulitple rows
         $tstr .= $person->{name} if $person->{country} eq 'fr';
     }
-    return "Failed multiple select"  unless 'SueTom' eq $tstr;
-    return "Failed names" unless 'namecountrysex' eq join '',adNames($table);
-    return "Failed rows"  unless 2 == adRows($table);
-    return 'ok';
+    ok('SueTom' eq $tstr, "Failed multiple select");
+    ok('namecountrysex' eq join('',adNames($table)), "Failed names");
+    ok(2 == adRows($table), "Failed rows");
 }
 
 

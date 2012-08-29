@@ -22,7 +22,7 @@ AnyData/Storage/FileSys.pm
 AnyData/Storage/PassThru.pm
 AnyData/Storage/RAM.pm
 AnyData/Storage/TiedHash.pm
-test.pl
+t/pod.t
 
 
 
