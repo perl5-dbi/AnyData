@@ -6,6 +6,7 @@ version 0.11, released  Aug 2012
 
  * new maintainer Sven Dowideit
  * use Test::More
+ * Fails to retrieve XML data over HTTP (debian#421884) Bart Martens <bartm@knars.be>
  *
 
 version 0.10, released 19 April 2004

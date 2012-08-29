@@ -681,11 +681,12 @@ paste into parent record_tag__
 
 sub get_data {
     my $self = shift;
-    my $fh_or_str  = shift  || return;
+    my $fh_or_str  = shift;
     my $url = $self->{url};
     if ( $url ) {
       $fh_or_str = AnyData::Storage::RAM::get_remote_data({},$url);
     }
+    return if( ! defined( $fh_or_str ) );
     my $col_names = shift || [];
     $col_names = []; #### IGNORE USER COLUMN NAMES FOR NOW
     my $flags;
