@@ -20,8 +20,10 @@ ExtUtils::MakeMaker::WriteMakefile(
         (
             $ExtUtils::MakeMaker::VERSION >= 5.43
             ? (
-                'AUTHOR' => 'Jeff Zucker (jeff@vpservices.com)',
-                'AUTHOR' => 'Sven Dowideit (SvenDowideit@fosiki.com)',
+                'AUTHOR' => [
+                    'Jeff Zucker (jeff@vpservices.com)',
+                    'Sven Dowideit (SvenDowideit@fosiki.com)',
+                ]
               )
             : ()
         ),
