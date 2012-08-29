@@ -14,7 +14,7 @@ use vars qw( @ISA @EXPORT $VERSION );
 @EXPORT = qw(  adConvert adTie adRows adColumn adExport adDump adNames adFormats);
 #@EXPORT = qw(  ad_fields adTable adErr adArray);
 
-$VERSION = '0.10';
+$VERSION = '0.11';
 
 sub new {
    my $class   = shift;
@@ -1436,6 +1436,7 @@ Special thanks to Andy Duncan, Tom Lowery, Randal Schwartz, Michel Rodriguez, Jo
  Jeff Zucker <jeff@vpservices.com>
 
  This module is copyright (c), 2000 by Jeff Zucker.
+ Some changes (c) 2012 Sven Dowideit L<mailto:SvenDowideit@fosiki.com>
  It may be freely distributed under the same terms as Perl itself.
 
 =cut
