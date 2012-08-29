@@ -31,6 +31,8 @@ package AnyData::Format::Fixed;
 
 This is a parser for fixed length record files.  You must specify an unpack pattern listing the widths of the fields e.g. {pattern=>'A3 A7 A20'}.  You can either supply the column names or let the module get them for you from the first line of the file.  In either case, they should be a comma separated string.
 
+Refer to L<http://perldoc.perl.org/functions/pack.html> for the formating of the pattern.
+
 Please refer to the documentation for AnyData.pm and DBD::AnyData.pm
 for further details.
 
@@ -70,7 +72,7 @@ sub write_fields {
     my @fieldLengths = split /\s+/, $patternStr;
     my $fieldStr = '';
     for(@fields) {
-        next unless $_;
+        next unless defined $_;
         # PAD OR TRUNCATE DATA TO FIT WITHIN FIELD LENGTHS
         my $oldLen = length $_ || 0;
         my $newLen =  $fieldLengths[$fieldNum] || 0;

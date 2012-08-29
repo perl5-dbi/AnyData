@@ -23,6 +23,9 @@ AnyData/Storage/PassThru.pm
 AnyData/Storage/RAM.pm
 AnyData/Storage/TiedHash.pm
 t/pod.t
+t/test.t
+t/fixed.t
+t/fixed.tbl
 
 
 
