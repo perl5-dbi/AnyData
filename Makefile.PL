@@ -13,7 +13,10 @@ ExtUtils::MakeMaker::WriteMakefile(
             'DIST_DEFAULT' => 'all tardist',
             'COMPRESS'     => "gzip -9vf"
         },
-        'PREREQ_PM' => { 'Test::More' => '0.9' },
+        'PREREQ_PM' => {
+            'Test::More'                          => '0.9',
+            'Test::Pod::Spelling::CommonMistakes' => '1.000'
+        },
         ( $ExtUtils::MakeMaker::VERSION >= 6.3002 ?
               ( 'LICENSE' => 'perl', )
             : () ),
