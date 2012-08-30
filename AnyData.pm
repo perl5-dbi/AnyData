@@ -822,7 +822,8 @@ AnyData - easy access to data in many formats
 
 =head1 SYNOPSIS
 
- $table = adTie( 'CSV','my_db.csv','o',            # create a table
+ use AnyData;
+ my $table = adTie( 'CSV','my_db.csv','o',            # create a table
                  {col_names=>'name,country,sex'}
                );
  $table->{Sue} = {country=>'de',sex=>'f'};         # insert a row
@@ -831,7 +832,7 @@ AnyData - easy access to data in many formats
  while ( my $row = each %$table ) {                # loop through table
    print $row->{name} if $row->{sex} eq 'f';
  }
- $rows = $table->{{age=>'> 25'}}                   # select multiple rows
+ $rows = $table->{{age=>'> 25'}};                  # select multiple rows
  delete $table->{{country=>qr/us|mx|ca/}};         # delete multiple rows
  $table->{{country=>'Nz'}}={country=>'nz'};        # update multiple rows
  my $num = adRows( $table, age=>'< 25' );          # count matching rows
@@ -843,9 +844,8 @@ AnyData - easy access to data in many formats
  print adDump($table);                             # dump table to screen
  undef $table;                                     # close the table
 
- adConvert( $format1, $file1, $format2, $file2 );  # convert btwn formats
- print adConvert( $format1, $file1, $format2 );    # convert to screen
-
+ #adConvert( $format1, $file1, $format2, $file2 );  # convert btwn formats
+ #print adConvert( $format1, $file1, $format2 );    # convert to screen
 
 =head1 DESCRIPTION
 
@@ -883,7 +883,9 @@ DBI, DBD::AnyData, SQL::Statement and DBD::File installed.
 
 =head1 USAGE
 
- The AnyData module imports eight methods (functions):
+The AnyData module imports eight methods (functions):
+
+=for test ignore
 
   adTie()     -- create a new table or open an existing table
   adExport()  -- save an existing table in a specified format
@@ -894,14 +896,14 @@ DBI, DBD::AnyData, SQL::Statement and DBD::File installed.
   adDump()    -- display the data formatted as an array of rows
   adColumn()  -- group values in a single column
 
- The adTie() command returns a special tied hash.  The tied hash can
- then be used to access and/or modify data.  See below for details
+The adTie() command returns a special tied hash.  The tied hash can
+then be used to access and/or modify data.  See below for details
 
- With the exception of the XML, HTMLtable, and ARRAY formats, the
- adTie() command saves all modifications of the data directly to file
- as they are made.  With XML and HTMLtable, you must make your
- modifications in memory and then explicitly save them to file with
- adExport().
+With the exception of the XML, HTMLtable, and ARRAY formats, the
+adTie() command saves all modifications of the data directly to file
+as they are made.  With XML and HTMLtable, you must make your
+modifications in memory and then explicitly save them to file with
+adExport().
 
 =head2 adTie()
 
@@ -911,22 +913,23 @@ The adTie() command creates a reference to a multi-dimensional tied hash. In its
 
  my $table = adTie( $format, $file );
 
- $format is the name of any supported format 'CSV','Fixed','Passwd', etc.
- $file is the name of a relative or absolute path to a local file
+$format is the name of any supported format 'CSV','Fixed','Passwd', etc.
+$file is the name of a relative or absolute path to a local file
 
- e.g. my $table = adTie( 'CSV', '/usr/me/myfile.csv' );
+e.g. 
+     my $table = adTie( 'CSV', '/usr/me/myfile.csv' );
 
-      this creates a tied hash called $table by reading data in the
-      CSV (comma separated values) format from the file 'myfile.csv'.
+this creates a tied hash called $table by reading data in the
+CSV (comma separated values) format from the file 'myfile.csv'.
 
 The hash reference resulting from adTie() can be accessed and modified as follows:
 
  use AnyData;
  my $table = adTie( $format, $file );
- $table->{$key}->{$column}                       # select a value
- $table->{$key} = {$col1=>$val1,$col2=>$val2...} # update a row
- delete $table->{$key}                           # delete a row
- while(my $row = each %$table) {                 # loop through rows
+ $table->{$key}->{$column};                       # select a value
+ $table->{$key} = {$col1=>$val1,$col2=>$val2...}; # update a row
+ delete $table->{$key};                           # delete a row
+ while(my $row = each %$table) {                  # loop through rows
    print $row->{$col1} if $row->{$col2} ne 'baz';
  }
 

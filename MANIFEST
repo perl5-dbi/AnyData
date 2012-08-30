@@ -22,10 +22,11 @@ AnyData/Storage/FileSys.pm
 AnyData/Storage/PassThru.pm
 AnyData/Storage/RAM.pm
 AnyData/Storage/TiedHash.pm
+t/01distributtion.t
+t/01pod_snippets.t
 t/pod.t
 t/test.t
-t/fixed.t
 t/fixed.tbl
-
-
+t/spelling.t
+t/fixed.t
 

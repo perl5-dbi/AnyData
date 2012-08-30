@@ -7,16 +7,17 @@ plan tests => 6;
 
 use AnyData;
 
-    my $table = adTie( 'Fixed', 't/fixed.tbl', 'r', {pattern=>'A11 A2'} ); 
+my $table = adTie( 'Fixed', 't/fixed.tbl', 'r', { pattern => 'A11 A2' } );
 
-    ok(6 == adRows($table), "Failed rows");
-    ok('au' eq $table->{'australia'}->{code}, 'select one');
-    ok('ch' eq $table->{'switzerland'}->{code}, 'select another');
-    ok('0' eq $table->{'broken'}->{code}, 'select another');
-    ok(' 0' eq $table->{'broken2'}->{code}, 'select another');
+ok( 6 == adRows($table), "Failed rows" );
+ok( 'au' eq $table->{'australia'}->{code},   'select one' );
+ok( 'ch' eq $table->{'switzerland'}->{code}, 'select another' );
+ok( '0'  eq $table->{'broken'}->{code},      'select another' );
+ok( ' 0' eq $table->{'broken2'}->{code},     'select another' );
 
 #write test
-    ok(<<'HERE' eq adExport($table, 'Fixed', undef, {pattern=>'A11 A2'}), 'export fixed format');
+ok(
+    <<'HERE' eq adExport( $table, 'Fixed', undef, { pattern => 'A11 A2' } ), 'export fixed format' );
 country    co
 australia  au
 germany    de
