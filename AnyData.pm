@@ -488,7 +488,7 @@ sub adDump {
     my @cols = @{ $ad->col_names };
     print "<",join(":", @cols), ">\n";
     while (my $row = each %$table) {
-        my @row  = map {$row->{$_} || ''} @cols;
+        my @row  = map {defined $row->{$_} ? $row->{$_} : ''} @cols;
         for (@row) { print "[$_]"; }
         print  "\n";
     }
