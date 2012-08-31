@@ -13,6 +13,7 @@ version 0.11, released  Aug 2012
  * writing fields containing 0 with AnyData::Format::Fixed (RT#8671) <elodie+cpan [...] pasteur.fr>
  * weblog request and referer regexs were too greedy, and the referer and client regex's where in the wrong order (RT#34063) and (RT#72334) Wes Brown <wes [...] smellycat.com> and pawal [...] blipp.com
  * adDump writes out fields containing 0 as empty strings (RT#28006) xcaron [...] gmail.com
+ * A bug in AnyData::Format::Weblog, SQL excuting result is not correct (RT#56962) youngyik@gmail.com
 
 version 0.10, released 19 April 2004
 
