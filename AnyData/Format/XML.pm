@@ -867,11 +867,9 @@ sub export {
 #z  my $format = shift;
     my $file = shift;
     my $flags = shift || {};
-#print "\n\n== $file == \n\n" if $file;
 #$self->{twig}->print;
-#z    if ( ( $storage and $file and !($file eq $storage->{file_name}) )
-#z      or ( $storage and $file and !$storage->{fh} )
-    if ( ( $storage and $file )
+    if ( 
+      ( $storage and $file and !$storage->{fh} )
        ) {
        $storage->{file_name} = $file;
        $storage->{fh} = $storage->open_local_file($file,'o');
