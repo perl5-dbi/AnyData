@@ -9,6 +9,8 @@
 ^Build$
 CVS/.*
 \.svn/.*
+\.git
+\.git/.*
 \.cvsignore$
 \.Inline/.*
 _Inline/.*
@@ -24,4 +26,4 @@ _Inline/.*
 ^_build/.*
 ~$
 ^MYMETA.yml$
-DBD-AnyData-.*
+AnyData-.*
