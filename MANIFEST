@@ -21,6 +21,7 @@ AnyData/Storage/RAM.pm
 AnyData/Storage/TiedHash.pm
 Changes
 Debian_CPANTS.txt
+LICENSE
 Makefile.PL
 MANIFEST
 MANIFEST.SKIP
