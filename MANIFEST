@@ -37,10 +37,10 @@ t/weblog.t
 t/weblog.tbl
 t/xml.out
 t/xml.t
-xt/01distributtion.t
-xt/01pod_snippets.t
-xt/99-kwalitee.t
-xt/99-manifest.t
-xt/99-pod-coverage.t
-xt/99-pod.t
-xt/99-spelling.t
+xt/distribution.t
+xt/kwalitee.t
+xt/manifest.t
+xt/pod-coverage.t
+xt/pod-snippets.t
+xt/pod.t
+xt/spelling.t
