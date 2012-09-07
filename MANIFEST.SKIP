@@ -25,5 +25,5 @@ _Inline/.*
 ^pm_to_blib$
 ^_build/.*
 ~$
-^MYMETA.yml$
+^MYMETA.*$
 AnyData-.*

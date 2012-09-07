@@ -933,7 +933,7 @@ sub export {
 
 =head1 SYNOPSIS
 
- # access XML data via a multi-dimensional tied hash
+ # access XML data via a multidimensional tied hash
  # see AnyData.pod for full details
  #
  use AnyData;
@@ -965,7 +965,7 @@ to all of these examples.
 This module allows you to create, search, modify and/or convert XML data
 and files by treating them as databases without having to actually
 create separate database files.  The data can 
-be accessed via a multi-dimensional tiedhash using AnyData.pm or via DBI 
+be accessed via a multidimensional tiedhash using AnyData.pm or via DBI 
 and SQL commands using DBD::AnyData.pm.  See those modules for 
 complete details of usage.
 
@@ -977,7 +977,7 @@ XML::Parser on which it is based.
 
 Importing options allow you to import/access/modify XML of almost any length or complexity.  This includes the ability to access different subtrees as separate or joined databases.
 
-Exporting and converting options allow you to take data from almost any source (a perl array, any DBI database, etc.) and output it as an XML file.  You can control the formating of the resulting XML either by supplying a DTD listing things like nesting of tags and which columns should be output as attributes and/or you can use XML::Twig pretty_print settings to generate half a dozen different levels of compactness or whitespace in how the XML looks.
+Exporting and converting options allow you to take data from almost any source (a perl array, any DBI database, etc.) and output it as an XML file.  You can control the formatting of the resulting XML either by supplying a DTD listing things like nesting of tags and which columns should be output as attributes and/or you can use XML::Twig pretty_print settings to generate half a dozen different levels of compactness or whitespace in how the XML looks.
 
 The documentation below outlines the special flags that can be used
 in either of the interfaces to fine-tune how the XML is treated.
@@ -1066,7 +1066,7 @@ That would find the three tags referenced on the left and create a database with
 
 When exporting XML, you can specify a DTD to control the output.  For example, if you import a table from CSV or from an Array, you can output as XML and specify which of the columns become tags and which become attributes and also specify the nesting of the tags in your DTD.
 
-The XML format parser is built on top of Michel Rodriguez's excellent XML::Twig which is itslef based on XML::Parser.  Parameters to either of those modules may be passed in the flags for adTie() and the other commands including the "prettyPrint" flag to specify how the output XML is displayed and things like ProtocolEncoding.  ProtocolEncoding defaults to 'ISO-8859-1', all other flags keep the defaults of XML::Twig and XML::Parser.  See the documentation of those modules for details;
+The XML format parser is built on top of Michel Rodriguez's excellent XML::Twig which is itself based on XML::Parser.  Parameters to either of those modules may be passed in the flags for adTie() and the other commands including the "prettyPrint" flag to specify how the output XML is displayed and things like ProtocolEncoding.  ProtocolEncoding defaults to 'ISO-8859-1', all other flags keep the defaults of XML::Twig and XML::Parser.  See the documentation of those modules for details;
 
  CAUTION: Unlike other formats, the XML format does not save changes to
  the file as they are entered, but only saves the changes when you explicitly

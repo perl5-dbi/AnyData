@@ -852,7 +852,7 @@ AnyData - easy access to data in many formats
 The rather wacky idea behind this module and its sister module
 DBD::AnyData is that any data, regardless of source or format should
 be accessible and modifiable with the same simple set of methods.
-This module provides a multi-dimensional tied hash interface to data
+This module provides a multidimensional tied hash interface to data
 in a dozen different formats. The DBD::AnyData module adds a DBI/SQL
 interface for those same formats.
 
@@ -860,7 +860,7 @@ Both modules provide built-in protections including appropriate
 flocking() for all I/O and (in most cases) record-at-a-time access to
 files rather than slurping of entire files.
 
-Currently supported formats include general format flatfiles (CSV,
+Currently supported formats include general format flat files (CSV,
 Fixed Length, etc.), specific formats (passwd files, httpd logs,
 etc.), and a variety of other kinds of formats (XML, Mp3, HTML
 tables).  The number of supported formats will continue to grow
@@ -909,7 +909,7 @@ adExport().
 
  my $table = adTie( $format, $data, $open_mode, $flags );
 
-The adTie() command creates a reference to a multi-dimensional tied hash. In its simplest form, it simply reads a file in a specified format into the tied hash:
+The adTie() command creates a reference to a multidimensional tied hash. In its simplest form, it simply reads a file in a specified format into the tied hash:
 
  my $table = adTie( $format, $file );
 
@@ -943,7 +943,7 @@ is a *reference* to a tied hash so the syntax would be
 
 Also keep in mind that if the table is really large, you probably do
 not want to use keys and values because they create arrays in memory
-containng data from every row in the table.  Instead use 'each' as
+containing data from every row in the table.  Instead use 'each' as
 shown above since that cycles through the file one record at a time
 and never puts the entire table into memory.
 
@@ -1075,7 +1075,7 @@ file that contain the specified page in the request column
   print adRows( $hits , request => 'mypage.html' );
 
 The search hash may contain multiple search criteria, see the
-section on mltiple row operations below.
+section on multiple row operations below.
 
 If the search_hash is omitted, it returns a count of all rows.
 
@@ -1098,13 +1098,13 @@ the 'player' column of the table.
   my $table = adTie(...);
   print adDump($table);
 
-This method prints the raw data in the table.  Column names are printed inside angle brackets and separated by colons on the first line, then each row is printed as a list of values inside sqaure brackets.
+This method prints the raw data in the table.  Column names are printed inside angle brackets and separated by colons on the first line, then each row is printed as a list of values inside square brackets.
 
 =head2 adFormats()
 
   print "$_\n for adFormats();
 
-This method shows the available format parsers, e.g. 'CSV', 'XML', etc.  It looks in your @INC for the .../AnyData/Format directory and prints the names of format parsing files there.  If the parser requires further modules (e.g. XML requires XML::Parser) and you do not have the additonal modules installed, the format will not work even if listed by this command.  Otherwise, all formats should work as described in this documentation.
+This method shows the available format parsers, e.g. 'CSV', 'XML', etc.  It looks in your @INC for the .../AnyData/Format directory and prints the names of format parsing files there.  If the parser requires further modules (e.g. XML requires XML::Parser) and you do not have the additional modules installed, the format will not work even if listed by this command.  Otherwise, all formats should work as described in this documentation.
 
 =head1 FURTHER DETAILS
 
@@ -1112,7 +1112,7 @@ This method shows the available format parsers, e.g. 'CSV', 'XML', etc.  It look
 
 Column names may be assigned in three ways:
 
- * pre  -- The format parser pre-assigns column
+ * pre  -- The format parser preassigns column
            names (e.g. Passwd files automatically have
            columns named 'username', 'homedir', 'GID', etc.).
 
@@ -1125,14 +1125,14 @@ Column names may be assigned in three ways:
                               {cols=>'name,age,gender'}
                             );
 
- * auto -- If there is no pre-assigned list of column names
+ * auto -- If there is no preassigned list of column names
            and none defined by the user, the first line of
            the file is treated as a list of column names;
            the line is parsed according to the specific
            format (e.g. CSV column names are a comma-separated
            list, Tab column names are a tab separated list);
 
-When creating a new file in a format that does not pre-assign
+When creating a new file in a format that does not preassign
 column names, the user *must* manually assign them as shown above.
 
 Some formats have special rules for assigning column names (XML,Fixed,HTMLtable), see the sections below on those formats.
@@ -1144,7 +1144,7 @@ uniquely identifies each row as well as tables that do not have such
 keys.  For tables where there is a unique key, that key may be assigned
 in three ways:
 
- * pre --  The format parser automatically pre-assigns the
+ * pre --  The format parser automatically preassigns the
            key column name e.g. Passwd files automatically
            have 'username' as the key column.
 
@@ -1156,7 +1156,7 @@ in three ways:
                               {key=>'country'}
                             );
 
- * auto    If there is no pre-assigned key column and the user
+ * auto    If there is no preassigned key column and the user
            does not define one, the first column becomes the
            default key column
 
@@ -1226,7 +1226,7 @@ and sub tags, i.e. "table_id","row_id","name","location".
 
 When exporting XML, you can specify a DTD to control the output.  For example, if you import a table from CSV or from an Array, you can output as XML and specify which of the columns become tags and which become attributes and also specify the nesting of the tags in your DTD.
 
-The XML format parser is built on top of Michel Rodriguez's excellent XML::Twig which is itslef based on XML::Parser.  Parameters to either of those modules may be passed in the flags for adTie() and the other commands including the "prettyPrint" flag to specify how the output XML is displayed and things like ProtocolEncoding.  ProtocolEncoding defaults to 'ISO-8859-1', all other flags keep the defaults of XML::Twig and XML::Parser.  See the documentation of those modules for details;
+The XML format parser is built on top of Michel Rodriguez's excellent XML::Twig which is itself based on XML::Parser.  Parameters to either of those modules may be passed in the flags for adTie() and the other commands including the "prettyPrint" flag to specify how the output XML is displayed and things like ProtocolEncoding.  ProtocolEncoding defaults to 'ISO-8859-1', all other flags keep the defaults of XML::Twig and XML::Parser.  See the documentation of those modules for details;
 
  CAUTION: Unlike other formats, the XML format does not save changes to
  the file as they are entered, but only saves the changes when you explicitly
@@ -1353,7 +1353,7 @@ For example:
 
 =head2 Using Strings and Arrays
 
-Strings and arrays may be used as either the source of data input or as the target of data output.  Strings should be passed as the only element of an array reference (in other words, insdie square brackets).  Arrays should be a reference to an array whose first element is a reference to an array of column names and whose succeeding elements are references to arrays of row values.
+Strings and arrays may be used as either the source of data input or as the target of data output.  Strings should be passed as the only element of an array reference (in other words, inside square brackets).  Arrays should be a reference to an array whose first element is a reference to an array of column names and whose succeeding elements are references to arrays of row values.
 
 For example:
 
@@ -1418,7 +1418,7 @@ deletion:
 
 =head2 Deletions and Packing
 
-In order to save time and to prevent having to do writes anywhere except at the end of the file, deletions and updates are *not* done at the time of issuing a delete command.  Rather when the user does a delete, the position of the deleted record is stored in a hash and when the file is saved to disk, the deletions are only then physically removed by packing the entire database.  Updates are done by inserting the new record at the end of the file and marking the old record for deletion.  In the normal course of events, all of this should be transparent and you'll never need to worry about it.  However, if your server goes down after you've made updates or deletions but before you've saved the file, then the deleted rows will remain in the database and for updates there will be duplicate rows -- the old unpdated row and the new updated row.  If you are worried about this kind of event, then use atomic deletes and updates as shown in the section above.  There's still a very small possiblity of a crash in between the deletion and the save, but in this case it should impact at most a single row.  (BIG thanks to Matthew Wickline for suggestions on handling deletes)
+In order to save time and to prevent having to do writes anywhere except at the end of the file, deletions and updates are *not* done at the time of issuing a delete command.  Rather when the user does a delete, the position of the deleted record is stored in a hash and when the file is saved to disk, the deletions are only then physically removed by packing the entire database.  Updates are done by inserting the new record at the end of the file and marking the old record for deletion.  In the normal course of events, all of this should be transparent and you'll never need to worry about it.  However, if your server goes down after you've made updates or deletions but before you've saved the file, then the deleted rows will remain in the database and for updates there will be duplicate rows -- the old non updated row and the new updated row.  If you are worried about this kind of event, then use atomic deletes and updates as shown in the section above.  There's still a very small possibility of a crash in between the deletion and the save, but in this case it should impact at most a single row.  (BIG thanks to Matthew Wickline for suggestions on handling deletes)
 
 =head1 MORE HELP
 
@@ -1432,7 +1432,7 @@ For further support, please use comp.lang.perl.modules
 
 =head1 ACKNOWLEDGEMENTS
 
-Special thanks to Andy Duncan, Tom Lowery, Randal Schwartz, Michel Rodriguez, Jochen Wiedmann, Tim Bunce, Aligator Descartes, Mathew Persico, Chris Nandor, Malcom Cook and to many others on the DBI mailing lists and the clp* newsgroups.
+Special thanks to Andy Duncan, Tom Lowery, Randal Schwartz, Michel Rodriguez, Jochen Wiedmann, Tim Bunce, Alligator Descartes, Mathew Persico, Chris Nandor, Malcom Cook and to many others on the DBI mailing lists and the clp* newsgroups.
 
 =head1 AUTHOR & COPYRIGHT
 
