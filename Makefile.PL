@@ -1,6 +1,6 @@
 # -*- perl -*-
 
-require 5.004;
+require 5.006;
 use strict;
 require ExtUtils::MakeMaker;
 ExtUtils::MakeMaker::WriteMakefile(
@@ -29,7 +29,7 @@ ExtUtils::MakeMaker::WriteMakefile(
   },
     "META_ADD"           => {
         resources => {
-            homepage   => 'http://foswiki.org/',
+            homepage   => 'http://github.com/SvenDowideit/Data-Foswiki',
             repository => 'git://github.com/SvenDowideit/Data-Foswiki.git',
 
             #            x_twitter => 'http://twitter.com/SvenDowideit/',

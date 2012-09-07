@@ -82,6 +82,7 @@ all rights reserved
 =cut
 
 use strict;
+use warnings;
 use AnyData::Format::Base;
 use AnyData::Storage::File;
 use vars qw( @ISA $VERSION);

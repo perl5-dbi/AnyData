@@ -55,6 +55,7 @@ all rights reserved
 
 =cut
 use strict;
+use warnings;
 use AnyData::Format::Base;
 use AnyData::Storage::FileSys;
 use AnyData::Storage::File;

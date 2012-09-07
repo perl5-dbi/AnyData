@@ -44,6 +44,7 @@ all rights reserved
 =cut
 
 use strict;
+use warnings;
 use AnyData::Format::Base;
 use vars qw( @ISA $VERSION);
 @AnyData::Format::Fixed::ISA = qw( AnyData::Format::Base );

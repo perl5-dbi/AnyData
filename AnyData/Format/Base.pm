@@ -5,6 +5,7 @@ package AnyData::Format::Base;
 # copyright (c) 2000, Jeff Zucker <jeff@vpservices.com>
 #########################################################
 use strict;
+use warnings;
 use vars qw( @ISA $DEBUG );
 $DEBUG = 0;
 

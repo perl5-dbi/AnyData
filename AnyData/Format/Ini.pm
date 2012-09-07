@@ -44,6 +44,7 @@ all rights reserved
 
 use AnyData::Format::CSV;
 use strict;
+use warnings;
 use vars qw/@ISA $VERSION/;
 @ISA = qw(AnyData::Format::CSV);
 

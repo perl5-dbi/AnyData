@@ -8,6 +8,7 @@ package AnyData::Storage::PassThru;
 #  parser for formats like XML that do both format and storage
 #########################################################################
 use strict;
+use warnings;
 use vars qw($VERSION @ISA);
 
 $VERSION = '0.07';

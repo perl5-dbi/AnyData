@@ -5,6 +5,7 @@ package AnyData::Format::FileSys;
 # copyright (c) 2000, Jeff Zucker <jeff@vpservices.com>
 #########################################################
 use strict;
+use warnings;
 use AnyData::Format::Base;
 use vars qw( @ISA $DEBUG );
 @AnyData::Format::FileSys::ISA = qw( AnyData::Format::Base );

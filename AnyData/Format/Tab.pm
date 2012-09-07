@@ -51,6 +51,7 @@ all rights reserved
 =cut
 
 use strict;
+use warnings;
 use AnyData::Format::CSV;
 use vars qw( @ISA $VERSION );
 @AnyData::Format::Tab::ISA = qw( AnyData::Format::CSV );

@@ -52,6 +52,7 @@ all rights reserved
 =cut
 
 use strict;
+use warnings;
 use AnyData::Format::CSV;
 use vars qw( @ISA $VERSION);
 @AnyData::Format::Passwd::ISA = qw( AnyData::Format::CSV );

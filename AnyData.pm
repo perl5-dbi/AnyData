@@ -7,6 +7,7 @@ package AnyData;
 #
 ###################################################################
 use strict;
+use warnings;
 require Exporter;
 use AnyData::Storage::TiedHash;
 use vars qw( @ISA @EXPORT $VERSION );

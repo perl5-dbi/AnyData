@@ -8,6 +8,7 @@ package AnyData::Storage::RAM;
 #########################################################################
 
 use strict;
+use warnings;
 
 use vars qw($VERSION $DEBUG);
 

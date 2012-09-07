@@ -2,6 +2,7 @@
 package AnyData::Storage::TiedHash;
 ######################################
 use strict;
+use warnings;
 
 sub FETCH {
     my($self,$key) = @_;

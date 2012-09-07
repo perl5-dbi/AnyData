@@ -1,5 +1,6 @@
 package AnyData::Storage::File;
 use strict;
+use warnings;
 use IO::File;
 use Fcntl qw(:flock);
 use File::Basename;

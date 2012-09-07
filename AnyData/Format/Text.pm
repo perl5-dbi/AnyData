@@ -5,6 +5,7 @@ package AnyData::Format::Text;
 # copyright (c) 2000, Jeff Zucker <jeff@vpservices.com>
 #########################################################
 use strict;
+use warnings;
 use AnyData::Format::Base;
 use AnyData::Storage::FileSys;
 use vars qw( @ISA $DEBUG );

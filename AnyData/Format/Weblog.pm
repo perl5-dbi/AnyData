@@ -62,6 +62,7 @@ all rights reserved
 =cut
 
 use strict;
+use warnings;
 use AnyData::Format::Base;
 use vars qw( @ISA $DEBUG $VERSION);
 @AnyData::Format::Weblog::ISA = qw( AnyData::Format::Base );

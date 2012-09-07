@@ -1,6 +1,7 @@
 package AnyData::Storage::FileSys;
 
 use strict;
+use warnings;
 use File::Find;
 use File::Basename;
 use vars qw( @ISA @files $wanted_part $wanted_re );

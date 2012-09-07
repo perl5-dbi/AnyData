@@ -52,6 +52,7 @@ all rights reserved
 
 
 use strict;
+use warnings;
 use AnyData::Format::Base;
 use vars qw( @ISA $VERSION);
 @AnyData::Format::CSV::ISA = qw( AnyData::Format::Base );

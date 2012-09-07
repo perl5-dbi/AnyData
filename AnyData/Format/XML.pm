@@ -6,6 +6,7 @@ package AnyData::Format::XML;
 ##################################################################
 
 use strict;
+use warnings;
 use AnyData::Format::Base;
 use AnyData::Storage::RAM;
 use XML::Twig;
