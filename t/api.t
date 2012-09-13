@@ -9,7 +9,7 @@ my $table =
   adTie( 'CSV',
     ["word,number\none,1\ntwo,2\nthree,3\nunknown\nunknowncomma,\nzero,0"] );
 
-eval { require Test::Output; };
+eval { require Test::Output; Test::Output->import(); };
 if ($@) {
     plan tests => 1;
 }
