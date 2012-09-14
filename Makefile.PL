@@ -6,8 +6,8 @@ require ExtUtils::MakeMaker;
 ExtUtils::MakeMaker::WriteMakefile(
     (
         'NAME'          => 'AnyData',
-        'VERSION_FROM'  => 'AnyData.pm',
-        'ABSTRACT_FROM' => 'AnyData.pm',
+        'VERSION_FROM'  => 'lib/AnyData.pm',
+        'ABSTRACT_FROM' => 'lib/AnyData.pm',
         'LICENSE'       => "perl",
         'dist'          => {
             'SUFFIX'       => ".gz",
