@@ -18,7 +18,6 @@ ExtUtils::MakeMaker::WriteMakefile(
         'BUILD_REQUIRES'     => {
             'Test::Output'                        => '0.01',
             'Test::More'                          => '0.9',
-            'Test::Pod::Spelling::CommonMistakes' => '1.000'
         },
         'PREREQ_PM' => {},
         "test"      => { "TESTS" => "t/*.t" },
