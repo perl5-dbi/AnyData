@@ -3,6 +3,11 @@ use strict;
 use warnings;
 
 use Test::More;
+
+eval 'use XML::Twig;';
+plan( skip_all => 'XML::Twig not installed; skipping' ) if $@;
+
+
 plan tests => 3;
 
 use AnyData;
