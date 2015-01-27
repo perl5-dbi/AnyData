@@ -2,45 +2,47 @@
 
 require 5.006;
 use strict;
-require ExtUtils::MakeMaker;
+use ExtUtils::MakeMaker 6.30;
+
+my %test_requires = (
+    'Test::Output'               => '0.01',
+    'Test::More'                 => '0.9',
+);
+my @authors = (
+    'Jeff Zucker (jeff@vpservices.com)',
+    'Sven Dowideit (SvenDowideit@fosiki.com)',
+);
 ExtUtils::MakeMaker::WriteMakefile(
     (
         'NAME'          => 'AnyData',
         'VERSION_FROM'  => 'lib/AnyData.pm',
         'ABSTRACT_FROM' => 'lib/AnyData.pm',
-        'LICENSE'       => "perl",
-        'dist'          => {
-            'SUFFIX'       => ".gz",
-            'DIST_DEFAULT' => 'all tardist',
-            'COMPRESS'     => "gzip -9vf"
-        },
+        'LICENSE'       => "perl_5",
         'CONFIGURE_REQUIRES' => { "ExtUtils::MakeMaker" => "6.30" },
-        'BUILD_REQUIRES'     => {
-            'Test::Output'                        => '0.01',
-            'Test::More'                          => '0.9',
-        },
+        ( $ExtUtils::MakeMaker::VERSION < 6.63_03 ? 'BUILD_REQUIRES' : 'TEST_REQUIRES' ) => \%test_requires,
         'PREREQ_PM' => {},
-        "test"      => { "TESTS" => "t/*.t" },
         "META_ADD"  => {
-            resources => {
-                homepage   => 'http://github.com/SvenDowideit/Data-Foswiki',
-                repository => 'git://github.com/SvenDowideit/Data-Foswiki.git',
-
+            'meta-spec' => { version => 2 },
+            dynamic_config => 0,
+            homepage   => 'https://metacpan.org/release/AnyData',
+            repository => {
+                url => 'https://github.com/perl5-dbi/AnyData.git',
+                web => 'https://github.com/perl5-dbi/AnyData',
+                type => 'git',
+            },
+            bugtracker => {
+                mailto => 'bug-AnyData@rt.cpan.org',
+                web => 'https://rt.cpan.org/Public/Dist/Display.html?Name=AnyData',
+            },
                 #            x_twitter => 'http://twitter.com/SvenDowideit/',
-            }
         },
         ( $ExtUtils::MakeMaker::VERSION >= 6.3002 ?
               ( 'LICENSE' => 'perl', )
             : () ),
-        (
-            $ExtUtils::MakeMaker::VERSION >= 5.43
-            ? (
-                'AUTHOR' => [
-                    'Jeff Zucker (jeff@vpservices.com)',
-                    'Sven Dowideit (SvenDowideit@fosiki.com)',
-                ]
-              )
-            : ()
+        'AUTHOR' => (
+            $ExtUtils::MakeMaker::VERSION >= 6.57_02 ?
+              \@authors
+            : join(', ', @authors)
         ),
     )
 );
