@@ -35,6 +35,7 @@ ExtUtils::MakeMaker::WriteMakefile(
                 web => 'https://rt.cpan.org/Public/Dist/Display.html?Name=AnyData',
             },
                 #            x_twitter => 'http://twitter.com/SvenDowideit/',
+            x_deprecated => 1,
         },
         ( $ExtUtils::MakeMaker::VERSION >= 6.3002 ?
               ( 'LICENSE' => 'perl', )

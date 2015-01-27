@@ -819,7 +819,7 @@ sub dump {
 
 =head1 NAME
 
-AnyData - easy access to data in many formats
+AnyData - (DEPRECATED) easy access to data in many formats
 
 =head1 SYNOPSIS
 
