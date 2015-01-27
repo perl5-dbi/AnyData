@@ -28,3 +28,4 @@ _Inline/.*
 ~$
 ^MYMETA.*$
 AnyData-.*
+/t/htmltable.out
