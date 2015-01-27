@@ -2,6 +2,10 @@ AnyData - easy access to data in many formats
 
 Revision history for Perl extension AnyData.
 
+version 0.12, released  January 2015
+
+ * fix various packaging issues (RT#101768, RT#95908, RT#99763, RT#82862)
+
 version 0.11, released  Aug 2012
 
  * new maintainer Sven Dowideit
