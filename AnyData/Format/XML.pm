@@ -13,7 +13,7 @@ use XML::Twig;
 use vars qw( @ISA  $DEBUG $VERSION);
 @AnyData::Format::XML::ISA = qw( AnyData::Format::Base );
 
-$VERSION = '0.05';
+$VERSION = '0.12';
 
 sub seek    { 1 }
 sub get_pos { 1 }

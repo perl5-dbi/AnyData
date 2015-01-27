@@ -68,7 +68,7 @@ use vars qw( @ISA $DEBUG $VERSION);
 @AnyData::Format::Weblog::ISA = qw( AnyData::Format::Base );
 $DEBUG                        = 0;
 
-$VERSION = '0.06';
+$VERSION = '0.12';
 
 sub new {
     my $class = shift;

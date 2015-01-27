@@ -57,7 +57,7 @@ use AnyData::Format::Base;
 use vars qw( @ISA $VERSION);
 @AnyData::Format::CSV::ISA = qw( AnyData::Format::Base );
 
-$VERSION = '0.05';
+$VERSION = '0.12';
 
 sub new {
     my $class = shift;

@@ -12,7 +12,7 @@ use warnings;
 
 use vars qw($VERSION $DEBUG);
 
-$VERSION = '0.08';
+$VERSION = '0.12';
 
 $DEBUG   = 1;
 use Data::Dumper;
