@@ -5,8 +5,8 @@ use strict;
 use ExtUtils::MakeMaker 6.30;
 
 my %test_requires = (
-    'Test::Output'               => '0.01',
-    'Test::More'                 => '0.9',
+    'Test::Output'               => '0',
+    'Test::More'                 => '0',
 );
 my @authors = (
     'Jeff Zucker (jeff@vpservices.com)',
