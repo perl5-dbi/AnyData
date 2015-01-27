@@ -15,7 +15,7 @@ use vars qw( @ISA @EXPORT $VERSION );
 @EXPORT = qw(  adConvert adTie adRows adColumn adExport adDump adNames adFormats);
 #@EXPORT = qw(  ad_fields adTable adErr adArray);
 
-$VERSION = '0.11';
+$VERSION = '0.12';
 
 sub new {
    my $class   = shift;
