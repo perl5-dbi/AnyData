@@ -20,7 +20,7 @@ ExtUtils::MakeMaker::WriteMakefile(
         'LICENSE'       => "perl_5",
         'CONFIGURE_REQUIRES' => { "ExtUtils::MakeMaker" => "6.30" },
         ( $ExtUtils::MakeMaker::VERSION < 6.63_03 ? 'BUILD_REQUIRES' : 'TEST_REQUIRES' ) => \%test_requires,
-        'PREREQ_PM' => {},
+        'PREREQ_PM' => { 'CGI' => '0' },
         "META_ADD"  => {
             'meta-spec' => { version => 2 },
             dynamic_config => 0,
