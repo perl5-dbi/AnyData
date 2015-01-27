@@ -1,0 +1,11 @@
+!/.gitignore
+/Makefile
+/Makefile.old
+/MANIFEST.bak
+/MANIFEST.SKIP.bak
+/MYMETA.*
+/pm_to_blib
+/blib/
+/_eumm/
+/AnyData-*/
+/AnyData-*.tar.gz
