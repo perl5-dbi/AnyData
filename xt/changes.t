@@ -4,6 +4,6 @@ use strict;
 use warnings;
 
 use Test::More;
-use Test::CheckManifest;
+use Test::CPAN::Changes;
 
-ok_manifest();
+changes_ok();
