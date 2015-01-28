@@ -33,10 +33,10 @@ WriteMakefile1(
                 web    => 'http://rt.cpan.org/Public/Dist/Display.html?Name=AnyData',
                 mailto => 'bug-AnyData@rt.cpan.org',
             },
-            license      => 'http://dev.perl.org/licenses/',
-            x_deprecated => 1,
-	    x_IRC         => "irc://irc.perl.org/#dbi",
-	    x_MailingList => "mailto:dbi-dev\@perl.org'",
+            license       => 'http://dev.perl.org/licenses/',
+            x_deprecated  => 1,
+            x_IRC         => "irc://irc.perl.org/#dbi",
+            x_MailingList => "mailto:dbi-dev\@perl.org'",
         },
         prereqs => {
             develop => {
