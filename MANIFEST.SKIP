@@ -29,3 +29,7 @@ _Inline/.*
 ^MYMETA.*$
 AnyData-.*
 /t/htmltable.out
+\.[co]
+\.bs
+\bxt\b/
+.travis.yml
