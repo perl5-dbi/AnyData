@@ -25,7 +25,7 @@ WriteMakefile1(
         resources      => {
             homepage   => 'https://metacpan.org/release/AnyData',
             repository => {
-                url  => 'git@github.com:perl5-dbi/AnyData.git',
+                url  => 'https://github.com/perl5-dbi/AnyData.git',
                 web  => 'https://github.com/perl5-dbi/AnyData',
                 type => 'git',
             },
