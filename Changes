@@ -2,13 +2,13 @@ AnyData - easy access to data in many formats
 
 Revision history for Perl extension AnyData.
 
-version 0.12, released  January 2015
+0.12	2015-01-28
 
  * fix various packaging issues (RT#101768, RT#95908, RT#99763, RT#82862)
  * add missing prereq on CGI (RT#99916)
  * officially marked as deprecated
 
-version 0.11, released  Aug 2012
+0.11	2012-12-14
 
  * new maintainer Sven Dowideit
  * use Test::More
@@ -22,27 +22,27 @@ version 0.11, released  Aug 2012
  * A bug in AnyData::Format::Weblog, SQL excuting result is not correct (RT#56962) youngyik@gmail.com
  * 
 
-version 0.10, released 19 April 2004
+0.10	2004-04-19
 
  * really fixed adConvert, thanks for bug reports - Dan Wright, Scott Godin
 
-version 0.09, released 18 April 2004
+0.09	2004-04-18
 
  * fixed adConvert - many thanks to Dan Wright for a patch
 
-version 0.08, released 25 October 2003
+0.08	2003-10-25
  
  * Storage/RAM.pm : added version number
 
-version 0.07, released 25 October 2003
+0.07	2003-10-25
  
  * Storage/PassThru.pm : added version number (thanks Randal Schwartz)
 
-version 0.06, released 25 October 2003
+0.06	2003-10-25
 
  * test.pl : omitted XML & HTMLtable tests
 
-version 0.05, released 17 July, 2001
+0.05	2001-07-17
 
  There are major changes in the way the tied hash interface
  does deletions and exporting and in the XML and Weblog format
@@ -93,21 +93,18 @@ version 0.05, released 17 July, 2001
  * added version numbers to all of the submodules and standardized
    the docs
 
-Version 0.04, 26th June, 2001
+0.04	2001-06-26
 
  * Beta release
 
-Version 0.03, 17th April, 2001
+0.03	2001-03-17
 
  * second Alpha release
 
-Version 0.02, 4th February, 2001
+0.02	2001-02-04
 
  * first Alpha release
 
-Version 0.01, 17th January, 2001
+0.01	2001-01-17
 
  * pre Alpha release
-
-
-
